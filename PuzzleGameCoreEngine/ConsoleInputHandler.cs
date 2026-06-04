@@ -46,33 +46,5 @@ namespace PuzzleGame
             logger.InvalidSelectElementInput();
             return SelectElement();
         }
-        public Vector2 GetMoveInput()
-        {
-            int gridLength = puzzle.GridElements.Length;
-            string input = Console.ReadLine();
-            string[] parts = input.Split(' ');
-            if (parts.Length != 2)
-            {
-                logger.LogInvalidInputFormat();
-                return GetMoveInput();
-            }
-            if (int.TryParse(parts[0], out int x) && int.TryParse(parts[1], out int y))
-            {
-                if(x >= 0 && x < gridLength && y >= 0 && y < gridLength)
-                {
-                    return new Vector2(x, y);
-                }
-                else
-                {
-                    logger.LogInvalidCoordinates(gridLength);
-                    return GetMoveInput();
-                }
-            }
-            else
-            {
-                logger.InvalidSelectElementInput();
-                return GetMoveInput();
-            }
-        }
     }
 }

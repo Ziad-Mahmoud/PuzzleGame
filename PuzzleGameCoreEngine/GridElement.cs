@@ -1,10 +1,8 @@
-﻿using System;
-
-namespace PuzzleGame
+﻿namespace PuzzleGame
 {
     internal class GridElement
     {
-        public Vector2 solutionIndex;
+        public readonly Vector2 solutionIndex;
         public Vector2 currentIndex;
         public int valuePiece;
         public GridElement(Vector2 solutionIndex, Vector2 currentIndex, int valuePiece)

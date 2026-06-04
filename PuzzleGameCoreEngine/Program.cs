@@ -1,14 +1,10 @@
-﻿using System;
-
-namespace PuzzleGame
+﻿namespace PuzzleGame
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             new PuzzleGameManager();
-
-            Console.ReadLine();
         }
     }
 }

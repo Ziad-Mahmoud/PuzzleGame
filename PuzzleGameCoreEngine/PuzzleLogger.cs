@@ -25,22 +25,6 @@ namespace PuzzleGame
             }
         }
 
-        internal void DrawPuzzleIndices(Puzzle puzzle)
-        {
-            Console.WriteLine("Current puzzle state:");
-
-            GridElement[][] gridElements = puzzle.GridElements;
-            for (int x = 0; x < gridElements.Length; x++)
-            {
-                for (int y = 0; y < gridElements[x].Length; y++)
-                {
-                    GridElement gridElement = gridElements[x][y];
-                    Console.Write($"[x: {x}, {gridElement.currentIndex.x}, y: {y}: {gridElement.currentIndex.y}]" + " ");
-                }
-                Console.WriteLine();
-            }
-        }
-
         internal void LogWelcome()
         {
             Console.WriteLine("Welcome to the Puzzle Game!");
@@ -107,8 +91,10 @@ namespace PuzzleGame
             Console.WriteLine("Invalid select element input. Please enter valid numbers.");
         }
 
-        internal void LogNotAdjacent()
+        internal void LogNotAdjacent(GridElement firstElement, GridElement secondElement)
         {
+            Console.WriteLine($"Attempting to swap elements at positions {firstElement.currentIndex.x},{firstElement.currentIndex.y} and {secondElement.currentIndex.x},{secondElement.currentIndex.y}");
+
             Console.WriteLine("Selected elements are not adjacent. Please select adjacent elements to swap.");
         }
 
